@@ -1,0 +1,94 @@
+{
+  "seller": [
+    {
+      "id": "b49a",
+      "name": "pulkit gupta",
+      "email": "pulkit@gmail.com",
+      "password": "123qaz!"
+    },
+    {
+      "id": "3c16",
+      "name": "pulkit gupta",
+      "email": "pulkit@gmail.com",
+      "password": "123qaz!"
+    },
+    {
+      "id": "4d7b",
+      "username": "pulkit",
+      "email": "sdfer",
+      "password": "1233"
+    },
+    {
+      "id": "f4de",
+      "name": "kushagra pandey",
+      "email": "kp@gmail.com",
+      "password": "facebook"
+    },
+    {
+      "id": "26a6",
+      "username": "pulkit",
+      "email": "gupta.pulkit2408@gmail.com",
+      "password": "1234"
+    },
+    {
+      "id": "7ae3",
+      "username": "pulkit",
+      "email": "gupta.pulkit2408@gmail.com",
+      "password": "1234"
+    },
+    {
+      "id": "90a0",
+      "username": "pulkit123",
+      "email": "pulkit@test.com",
+      "password": "123abc!@"
+    },
+    {
+      "id": "4fe4",
+      "username": "hello",
+      "email": "pulkit11@test.com",
+      "password": "112qazsd"
+    },
+    {
+      "id": "8e53",
+      "username": "pulkit2005",
+      "email": "pulkit24082005@gmail.com",
+      "password": "123456789"
+    },
+    {
+      "id": "4657",
+      "username": "sidd",
+      "email": "sidd@gmail.com",
+      "password": "12345678"
+    },
+    {
+      "id": "29be",
+      "username": "hi",
+      "email": "hi",
+      "password": "hi"
+    },
+    {
+      "id": "3e41",
+      "username": "kp",
+      "email": "kp@gm.com",
+      "password": "kp"
+    },
+    {
+      "id": "915b",
+      "username": "hiii",
+      "email": "hiiiii",
+      "password": "hiiiiii"
+    },
+    {
+      "id": "f987",
+      "username": "hiii",
+      "email": "hello",
+      "password": "hiii"
+    },
+    {
+      "id": "17d7",
+      "username": "badmash",
+      "email": "badmash@gmail.com",
+      "password": "gajarbhai"
+    }
+  ]
+}

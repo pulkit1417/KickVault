@@ -1,0 +1,71 @@
+/* Navigation Bar Styles */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #333;
+    color: #fff;
+    padding: 10px 20px;
+    font-family: 'Open Sans', sans-serif;
+  }
+  
+  /* Brand Name */
+  .brand a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 24px;
+    font-weight: bold;
+  }
+  
+  /* Search Container */
+  .search-container {
+    display: flex;
+    align-items: center;
+  }
+  
+  .search-container input[type="text"] {
+    margin-left: 15rem;
+    padding: 6px 10px;
+    border: none;
+    border-radius: 4px 0 0 4px;
+    font-size: 14px;
+    width:29rem;
+  }
+  
+  .search-container button {
+    color: #fff;
+    background-color: #29bf12;
+    border: none;
+    border-radius: 0 4px 4px 0;
+    padding: 6px 12px;
+    font-size: 14px;
+    cursor: pointer;
+  }
+  
+  /* Navigation Menu */
+  .nav-menu {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+  }
+  
+  .nav-menu li {
+    margin-left: 3rem;
+  }
+  
+  .nav-menu li a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 16px;
+    transition: color 0.3s;
+  }
+  
+  .nav-menu li a:hover {
+    color: #29bf12;
+  }
+
+  button{
+    height: auto;
+    width: 4rem;
+  }
