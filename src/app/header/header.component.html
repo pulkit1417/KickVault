@@ -1,16 +1,24 @@
 <nav>
-    <div class="brand">
-      <a routerLink="/">E-Comm</a>
-    </div>
-    <div class="search-container">
-      <input type="text" placeholder="Search...">
+      <a class="brand" routerLink="/">E-Comm</a>
+    <div *ngIf="menuType==='default'" class="search-container">
+      <form>
+      <input type="text" placeholder="Search..." required>
       <button type="submit">Search</button>
+    </form>
     </div>
-    <ul class="nav-menu">
+    <div [ngSwitch]="menuType" >
+    <ul *ngSwitchCase="'default'" class="nav-menu">
       <li><a routerLink="/" class="fs-5">Home</a></li>
       <li><a routerLink="/seller-auth" class="fs-5">Seller</a></li>
       <li><a routerLink="/login" class="fs-5">Login</a></li>
       <li><a routerLink="/cart" class="fs-5">Cart(0)</a></li>
     </ul>
+    <ul *ngSwitchCase="'seller'" class="nav-menu">
+      <li><a routerLink="/seller-home" class="fs-5">Product List</a></li>
+      <li><a routerLink="seller-add-product" class="fs-5">Add Product</a></li>
+      <li><a (click)="logout()" class="fs-5">Logout</a></li>
+      <li><a routerLink="/" class="fs-5">{{sellerName | titlecase}}</a></li>
+    </ul>
+  </div>
   </nav>
   

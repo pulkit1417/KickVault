@@ -10,11 +10,12 @@ nav {
   }
   
   /* Brand Name */
-  .brand a {
+  .brand {
     text-decoration: none;
     color: #fff;
-    font-size: 24px;
+    font-size: 28px;
     font-weight: bold;
+    margin-left: 2rem;
   }
   
   /* Search Container */
@@ -24,12 +25,13 @@ nav {
   }
   
   .search-container input[type="text"] {
-    margin-left: 15rem;
+    margin-left: 9rem;
     padding: 6px 10px;
     border: none;
     border-radius: 4px 0 0 4px;
     font-size: 14px;
     width:29rem;
+    
   }
   
   .search-container button {
@@ -68,4 +70,8 @@ nav {
   button{
     height: auto;
     width: 4rem;
+  }
+
+  a{
+    cursor: pointer;
   }

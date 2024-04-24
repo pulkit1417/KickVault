@@ -3,6 +3,7 @@ import { RouterOutlet } from '@angular/router';
 import { HeaderComponent } from './header/header.component';
 import { HttpClientModule } from '@angular/common/http';
 import { SellerService } from './serivces/seller.service';
+import { CommonModule } from '@angular/common';
 
 
 @Component({
