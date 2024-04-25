@@ -1,0 +1,37 @@
+table{
+    margin-top: 2rem;
+    text-align: left;
+    color: #29bf12;
+    border-collapse: collapse;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+img{
+    height: 100px;
+    width: 100px;
+}
+table td , table th{
+    border: 1.5px solid #29bf12;
+    padding: 10px;
+    min-width: 170px;
+}
+.adjust-update-link{
+    margin-left: 10px;
+}
+h1{
+    text-align: center;
+}
+p{
+    font-size: 1.1rem;
+    color:#45a049;
+    text-align: center;
+}
+
+fa-icon{
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

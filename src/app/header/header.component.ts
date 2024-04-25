@@ -16,7 +16,6 @@ export class HeaderComponent implements OnInit {
 
   ngOnInit(): void {
     this.route.events.subscribe((val: any) => {
-      console.warn(val.url);
       if (val.url) {
         if (localStorage.getItem('seller') && val.url.includes('seller')) {
           this.menuType = 'seller';

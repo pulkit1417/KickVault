@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormsModule } from '@angular/forms'; 
-import { SellerService } from '../serivces/seller.service';
+import { SellerService } from '../services/seller.service';
 import { Router } from '@angular/router';
 import { Login, SignUp } from '../data-types';
 import { NgIf } from '@angular/common';
