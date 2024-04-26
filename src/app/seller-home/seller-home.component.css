@@ -31,7 +31,9 @@ p{
 
 fa-icon{
     cursor: pointer;
-    display: flex;
-    justify-content: center;
-    align-items: center;
 }
+
+th , table td{
+    text-align: center;
+}
+
