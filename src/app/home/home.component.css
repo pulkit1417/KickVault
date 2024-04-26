@@ -1,0 +1,48 @@
+.carousel {
+    position: relative;
+  }
+  
+  .carousel-inner {
+    display: flex;
+    width:70%;
+    height: 100px; /* Adjust the height as needed */
+  }
+  
+  .carousel-item {
+    flex: 0 0 100%;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+  }
+  
+  .carousel-item.active {
+    opacity: 1;
+  }
+  
+  .carousel-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  .carousel-control-prev,
+  .carousel-control-next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 2rem;
+    color: #000;
+    text-decoration: none;
+  }
+  
+  .carousel-control-prev {
+    left: 1rem;
+  }
+  
+  .carousel-control-next {
+    right: 1rem;
+  }
+
+  a{
+    position: absolute;
+    margin-top:23rem;
+  }
