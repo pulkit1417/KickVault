@@ -1,1 +1,13 @@
-/* You can add global styles to this file, and also import other style files */
+/* For vertical scrollbar */
+html::-webkit-scrollbar {
+  width: 0.5rem;
+}
+
+html::-webkit-scrollbar-track {
+  background: #333;
+}
+
+html::-webkit-scrollbar-thumb {
+  background: #29bf12;
+  border-radius: 10px;
+}

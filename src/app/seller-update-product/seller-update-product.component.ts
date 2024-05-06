@@ -33,7 +33,7 @@ export class SellerUpdateProductComponent implements OnInit {
     this.product.updateProduct(data).subscribe((result) => {
       if (result) {
         this.productMessage = 'Product has beeen Updated';
-        this.productMessage2= "Page will be redirected after 3 seconds"
+        this.productMessage2= "Page will be redirected to Product-List"
 
       }
     });

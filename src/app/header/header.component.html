@@ -14,10 +14,10 @@
       <li><a routerLink="/cart" class="fs-5">Cart(0)</a></li>
     </ul>
     <ul *ngSwitchCase="'seller'" class="nav-menu">
-      <li><a routerLink="/seller-home" class="fs-5">Product List</a></li>
+      <li><a routerLink="seller-home" class="fs-5">Product List</a></li>
       <li><a routerLink="seller-add-product" class="fs-5">Add Product</a></li>
       <li><a (click)="logout()" class="fs-5">Logout</a></li>
-      <li><a routerLink="/" class="fs-5">{{sellerName | titlecase}}</a></li>
+      <li><a id="name" title="Seller Name" class="fs-5">{{sellerName | titlecase}}</a></li>
     </ul>
   </div>
   </nav>
