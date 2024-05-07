@@ -2,8 +2,15 @@
       <a class="brand" routerLink="/">E-Comm</a>
     <div *ngIf="menuType==='default'" class="search-container">
       <form>
-      <input type="text" placeholder="Search..." required>
-      <button type="submit">Search</button>
+        <input type="text"
+        #searchInput
+        (keyup)="searchProducts($event)" (blur)="hideSearch()" placeholder="Search Products" />
+        <button (click)="submitSearch(searchInput.value)" >Search</button>
+        <ul class="suggested-search" *ngIf="searchResult">
+          <li *ngFor="let item of searchResult">
+            <a (mousedown)="redirectToDetails(item.id)" >{{item.name}}</a>
+          </li>
+        </ul>
     </form>
     </div>
     <div [ngSwitch]="menuType" >
