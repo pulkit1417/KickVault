@@ -7,6 +7,7 @@ import { CartComponent } from './cart/cart.component';
 import { sellerAuthGuard } from './seller-auth.guard';
 import { SellerAddProductComponent } from './seller-add-product/seller-add-product.component';
 import { SellerUpdateProductComponent } from './seller-update-product/seller-update-product.component';
+import { ProductDetailsComponent } from './product-details/product-details.component';
 
 export const routes: Routes = [
   {path: '',component: HomeComponent},
@@ -15,5 +16,6 @@ export const routes: Routes = [
   {path:'login',component:LoginComponent},
   {path:'cart',component:CartComponent},
   {path:'seller-add-product',component:SellerAddProductComponent,canActivate:[sellerAuthGuard]},
-  {path:'seller-update-product/:id',component:SellerUpdateProductComponent,canActivate:[sellerAuthGuard]}
+  {path:'seller-update-product/:id',component:SellerUpdateProductComponent,canActivate:[sellerAuthGuard]},
+  {path:'details/:productId',component:ProductDetailsComponent}
 ];

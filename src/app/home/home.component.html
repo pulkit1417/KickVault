@@ -1,12 +1,14 @@
 	<div class="carousel">
 		<ng-container *ngIf="popularProducts && popularProducts.length > 0">
-		<div *ngFor="let product of popularProducts; let i = index" [class.active]="i === currentSlide" class="carousel-item">
-			<img [src]="product.image" [alt]="'Slide ' + (i + 1)">
-			<div class="carousel-caption">
-			<h3>{{ product.name }}</h3>
-			<p>{{ product.description }}</p>
-			</div>
-		</div>
+			<div *ngFor="let product of popularProducts; let i = index" [class.active]="i === currentSlide" class="carousel-item">
+				<a [routerLink]="['/details', product.id]">
+				  <img [src]="product.image" [alt]="'Slide ' + (i + 1)">
+				</a>
+				<div class="carousel-caption">
+				  <h3>{{ product.name }}</h3>
+				  <p>{{ product.description }}</p>
+				</div>
+			  </div>
 		</ng-container>
 		<a class="carousel-control-prev" (click)="prevSlide()" aria-label="Previous slide">
 		<span class="carousel-control-icon" aria-hidden="true">&lsaquo;</span>
@@ -15,24 +17,25 @@
 		<span class="carousel-control-icon" aria-hidden="true">&rsaquo;</span>
 		</a>
 	</div>
-  <div class="wrap">
-  <div class="product-list-wrapper">
-	<h1>Trendy Products</h1>
-	<div class="row">
-	  <div class="col-sm-3" *ngFor="let item of trendyProducts">
-		<div class="product-item">
-		  <img src="{{item.image}}" alt="">
-		<div class="product-details">
-		  <h6 class="name-head">{{item.name}}</h6>
-		  <div class="product-price">
-			<h6>Price: {{item.price}}</h6>
+	<div class="wrap">
+		<div class="product-list-wrapper">
+		  <h1>Trendy Products</h1>
+		  <div class="row">
+			<div class="product-item" *ngFor="let item of trendyProducts">
+			  <div class="product-card">
+				<div class="product-image">
+				  <img [src]="item.image" [alt]="item.name">
+				</div>
+				<div class="product-details">
+				  <h3 class="name-head">{{ item.name }}</h3>
+				  <p class="price">Price: {{ item.price }}</p>
+				  <div class="actions">
+					<a [routerLink]="['/details', item.id]" class="btn view-details">View Details</a>
+					<a href="#" class="btn add-to-cart">Add to Cart</a>
+				  </div>
+				</div>
+			  </div>
+			</div>
 		  </div>
 		</div>
-		<div class="product-footer">
-		  <a routerLink="/details/{{item.id}}">View Details</a>
-		  <a href="">Add to Cart</a>
-		</div>
-		</div>
 	  </div>
-	</div>
-

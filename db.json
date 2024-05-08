@@ -15,53 +15,36 @@
   ],
   "products": [
     {
-      "id": "1e54",
       "name": "I Watch",
-      "price": 1111,
-      "description": "watch",
-      "image": "https://imgs.search.brave.com/sOX9coNaxbHUVH9o2KCB1qVkFN2gME403VkAHZ3emxc/rs:fit:860:0:0/g:ce/aHR0cHM6Ly9tLm1l/ZGlhLWFtYXpvbi5j/b20vaW1hZ2VzL0kv/NTFtZ1FGRVNVNUwu/anBn"
+      "price": 30000,
+      "description": "An Apple watch",
+      "color": "red",
+      "image": "https://imgs.search.brave.com/5iyTiQSzhxJh0LibkORD1JVFtrChipIuW3tZHmaexZ8/rs:fit:500:0:0/g:ce/aHR0cHM6Ly9pNS53/YWxtYXJ0aW1hZ2Vz/LmNvbS9hc3IvZjVk/NDc4OGYtZWNiNy00/MTgxLWFhOTYtYWQ1/MGMxY2IzODI3LjEy/MjFjNDMxYmEyODky/OTk3NzVhZjQwZWYw/Njg5ZTVhLmpwZWc_/b2RuSGVpZ2h0PTYx/MiZvZG5XaWR0aD02/MTImb2RuQmc9RkZG/RkZG",
+      "id": "af4c"
     },
     {
-      "id": "9992",
-      "name": "I Watch",
-      "price": 1111,
-      "description": "watch",
-      "image": "https://imgs.search.brave.com/sOX9coNaxbHUVH9o2KCB1qVkFN2gME403VkAHZ3emxc/rs:fit:860:0:0/g:ce/aHR0cHM6Ly9tLm1l/ZGlhLWFtYXpvbi5j/b20vaW1hZ2VzL0kv/NTFtZ1FGRVNVNUwu/anBn"
+      "id": "a8ec",
+      "name": "Bat",
+      "price": 500,
+      "description": "A cricket Bat",
+      "color": "blue",
+      "image": "https://imgs.search.brave.com/MVHn-j-lknqXYiUZi2EpVDd-zX1WboWjffKosMpu7uc/rs:fit:500:0:0/g:ce/aHR0cHM6Ly9pbWFn/ZXMtbmEuc3NsLWlt/YWdlcy1hbWF6b24u/Y29tL2ltYWdlcy9J/LzcxdkExNDhYbUJM/LmpwZw"
     },
     {
-      "id": "a244",
-      "name": "I Watch",
-      "price": 1111,
-      "description": "watch",
-      "image": "https://imgs.search.brave.com/sOX9coNaxbHUVH9o2KCB1qVkFN2gME403VkAHZ3emxc/rs:fit:860:0:0/g:ce/aHR0cHM6Ly9tLm1l/ZGlhLWFtYXpvbi5j/b20vaW1hZ2VzL0kv/NTFtZ1FGRVNVNUwu/anBn"
+      "id": "ffc5",
+      "name": "Puma Sneakers",
+      "price": 2000,
+      "description": "Great comfort shoes",
+      "color": "yellow",
+      "image": "https://imgs.search.brave.com/pJr-gCji-D74R7QMtTIvm0EvFkVEH0xtGnio5YbPyJQ/rs:fit:500:0:0/g:ce/aHR0cHM6Ly9tLm1l/ZGlhLWFtYXpvbi5j/b20vaW1hZ2VzL0kv/NTFNSW9GcWFmNEwu/anBn"
     },
     {
-      "id": "8790",
-      "name": "I Watch",
-      "price": 1111,
-      "description": "watch",
-      "image": "https://imgs.search.brave.com/sOX9coNaxbHUVH9o2KCB1qVkFN2gME403VkAHZ3emxc/rs:fit:860:0:0/g:ce/aHR0cHM6Ly9tLm1l/ZGlhLWFtYXpvbi5j/b20vaW1hZ2VzL0kv/NTFtZ1FGRVNVNUwu/anBn"
-    },
-    {
-      "id": "958f",
-      "name": "I Watch",
-      "price": 1111,
-      "description": "watch",
-      "image": "https://imgs.search.brave.com/sOX9coNaxbHUVH9o2KCB1qVkFN2gME403VkAHZ3emxc/rs:fit:860:0:0/g:ce/aHR0cHM6Ly9tLm1l/ZGlhLWFtYXpvbi5j/b20vaW1hZ2VzL0kv/NTFtZ1FGRVNVNUwu/anBn"
-    },
-    {
-      "id": "5481",
-      "name": "I Watch",
-      "price": 1111,
-      "description": "watch",
-      "image": "https://imgs.search.brave.com/sOX9coNaxbHUVH9o2KCB1qVkFN2gME403VkAHZ3emxc/rs:fit:860:0:0/g:ce/aHR0cHM6Ly9tLm1l/ZGlhLWFtYXpvbi5j/b20vaW1hZ2VzL0kv/NTFtZ1FGRVNVNUwu/anBn"
-    },
-    {
-      "id": "af0e",
-      "name": "I Watch",
-      "price": 1111,
-      "description": "watch",
-      "image": "https://imgs.search.brave.com/sOX9coNaxbHUVH9o2KCB1qVkFN2gME403VkAHZ3emxc/rs:fit:860:0:0/g:ce/aHR0cHM6Ly9tLm1l/ZGlhLWFtYXpvbi5j/b20vaW1hZ2VzL0kv/NTFtZ1FGRVNVNUwu/anBn"
+      "id": "5a4d",
+      "name": "HP Laptop",
+      "price": 50000,
+      "description": "A HP Laptop for Gaming",
+      "color": "white",
+      "image": "https://imgs.search.brave.com/mX15QwDJn2MWTy1mub4jWc_PX-QzjjA-ytDNSBpzeoA/rs:fit:500:0:0/g:ce/aHR0cHM6Ly9tLm1l/ZGlhLWFtYXpvbi5j/b20vaW1hZ2VzL0kv/OTFYUiswMkFKQkwu/anBn"
     }
   ]
 }

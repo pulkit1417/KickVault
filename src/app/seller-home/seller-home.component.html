@@ -8,6 +8,7 @@
           <th>Name</th>
           <th>Price</th>
           <th>Description</th>
+          <th>Color</th>
           <th>Actions</th>
         </tr>
       </thead>
@@ -17,6 +18,7 @@
           <td>{{ item.name }}</td>
           <td>Rs. {{ item.price }}</td>
           <td>{{ item.description }}</td>
+          <td>{{ item.color }}</td>
            <td>
             <fa-icon (click)="deleteProduct(item.id)" [icon]="icon"></fa-icon>
             <a class="adjust-update-link" routerLink="/seller-update-product/{{item.id}}"> <fa-icon  [icon]="iconEdit"></fa-icon></a>
