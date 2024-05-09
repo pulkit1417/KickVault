@@ -16,19 +16,11 @@
   "products": [
     {
       "name": "I Watch",
-      "price": 30000,
+      "price": "30000",
       "description": "An Apple watch",
       "color": "red",
       "image": "https://imgs.search.brave.com/5iyTiQSzhxJh0LibkORD1JVFtrChipIuW3tZHmaexZ8/rs:fit:500:0:0/g:ce/aHR0cHM6Ly9pNS53/YWxtYXJ0aW1hZ2Vz/LmNvbS9hc3IvZjVk/NDc4OGYtZWNiNy00/MTgxLWFhOTYtYWQ1/MGMxY2IzODI3LjEy/MjFjNDMxYmEyODky/OTk3NzVhZjQwZWYw/Njg5ZTVhLmpwZWc_/b2RuSGVpZ2h0PTYx/MiZvZG5XaWR0aD02/MTImb2RuQmc9RkZG/RkZG",
       "id": "af4c"
-    },
-    {
-      "id": "a8ec",
-      "name": "Bat",
-      "price": 500,
-      "description": "A cricket Bat",
-      "color": "blue",
-      "image": "https://imgs.search.brave.com/MVHn-j-lknqXYiUZi2EpVDd-zX1WboWjffKosMpu7uc/rs:fit:500:0:0/g:ce/aHR0cHM6Ly9pbWFn/ZXMtbmEuc3NsLWlt/YWdlcy1hbWF6b24u/Y29tL2ltYWdlcy9J/LzcxdkExNDhYbUJM/LmpwZw"
     },
     {
       "id": "ffc5",
@@ -45,6 +37,20 @@
       "description": "A HP Laptop for Gaming",
       "color": "white",
       "image": "https://imgs.search.brave.com/mX15QwDJn2MWTy1mub4jWc_PX-QzjjA-ytDNSBpzeoA/rs:fit:500:0:0/g:ce/aHR0cHM6Ly9tLm1l/ZGlhLWFtYXpvbi5j/b20vaW1hZ2VzL0kv/OTFYUiswMkFKQkwu/anBn"
+    }
+  ],
+  "users": [
+    {
+      "id": "a9bb",
+      "username": "anil",
+      "email": "anil@user.com",
+      "password": "abc"
+    },
+    {
+      "id": "50e9",
+      "username": "peter",
+      "email": "peter@user.com",
+      "password": "abc"
     }
   ]
 }

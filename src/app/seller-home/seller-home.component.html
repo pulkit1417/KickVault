@@ -7,7 +7,7 @@
           <th>Image</th>
           <th>Name</th>
           <th>Price</th>
-          <th>Description</th>
+          <th id="desc">Description</th>
           <th>Color</th>
           <th>Actions</th>
         </tr>
@@ -17,7 +17,7 @@
           <td><img src="{{ item.image }}" /></td>
           <td>{{ item.name }}</td>
           <td>Rs. {{ item.price }}</td>
-          <td>{{ item.description }}</td>
+          <td id="desc">{{ item.description }}</td>
           <td>{{ item.color }}</td>
            <td>
             <fa-icon (click)="deleteProduct(item.id)" [icon]="icon"></fa-icon>

@@ -9,7 +9,7 @@
     height:60%;
     padding: 2rem;
     position: absolute;
-    left:17%;
+    left:14%;
 }
 .product-color{
     border: 3px solid #000;
@@ -26,4 +26,8 @@
 .quantity-group input{
     padding: 10px;
     width: 50px;
+}
+
+.details{
+    position: absolute;
 }
