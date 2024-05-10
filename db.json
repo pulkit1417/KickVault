@@ -47,7 +47,19 @@
       "password": "abc"
     },
     {
-      "id": "50e9",
+      "id": "8e51",
+      "username": "peter",
+      "email": "peter@user.com",
+      "password": "abc"
+    },
+    {
+      "id": "7074",
+      "username": "peter",
+      "email": "peter@user.com",
+      "password": "abc"
+    },
+    {
+      "id": "28b6",
       "username": "peter",
       "email": "peter@user.com",
       "password": "abc"

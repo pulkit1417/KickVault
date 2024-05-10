@@ -7,28 +7,26 @@ import { UserService } from '../services/user.service';
 @Component({
   selector: 'app-user-auth',
   standalone: true,
-  imports: [FormsModule,NgIf],
+  imports: [FormsModule, NgIf],
   templateUrl: './user-auth.component.html',
-  styleUrl: './user-auth.component.css'
+  styleUrl: './user-auth.component.css',
 })
 export class UserAuthComponent implements OnInit {
-  showLogin:boolean=true
-  constructor(private user:UserService){
-
-  }
+  showLogin: boolean = true;
+  constructor(private user: UserService) {}
   ngOnInit(): void {
-    
+    this.user.userAuthReload();
   }
-  openSignUp(){
-    this.showLogin=false
+  openSignUp() {
+    this.showLogin = true;
   }
-  openLogin(){
-this.showLogin=true;
+  openLogin() {
+    this.showLogin = false;
   }
-  signUp(data:SignUp){
+  signUp(data: SignUp) {
     this.user.userSignUp(data);
   }
-  login(data:Login){
-    console.warn(data)
+  login(data: Login) {
+    this.user.userLogin(data);
   }
 }
