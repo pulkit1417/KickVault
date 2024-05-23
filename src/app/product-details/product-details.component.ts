@@ -19,9 +19,7 @@ export class ProductDetailsComponent implements OnInit {
   constructor(private activeRoute : ActivatedRoute, private product:ProductService){}
   ngOnInit(): void {
     let productId=this.activeRoute.snapshot.paramMap.get('productId');
-    console.warn(productId);
-    productId && this.product.getProduct(productId).subscribe((result)=>{
-      console.warn(result)
+      productId && this.product.getProduct(productId).subscribe((result)=>{
       this.productData=result;
     })
   }
@@ -33,47 +31,16 @@ export class ProductDetailsComponent implements OnInit {
       this.productQuantity-=1;
     }
   }
-//   addToCart(){
-//     if(this.productData){
-//       this.productData.quantity = this.productQuantity;
-//       if(!localStorage.getItem('user')){
-//         this.product.localAddToCart(this.productData);
-//         this.removeCart=true
-//       }else{
-//         let user = localStorage.getItem('user');
-//         let userId= user && JSON.parse(user).id;
-//         let cartData:cart={
-//           ...this.productData,
-//           productId:this.productData.id,
-//           userId
-//         }
-//         delete cartData.id;
-//         this.product.addToCart(cartData).subscribe((result)=>{
-//           if(result){
-//            this.product.getCartList(userId);
-//            this.removeCart=true
-//           }
-//         })        
-//       }
-      
-//     } 
-//   }
-//   removeToCart(productId:number){
-//     if(!localStorage.getItem('user')){
-// this.product.removeItemFromCart(productId)
-//     }else{
-//       console.warn("cartData", this.cartData);
-      
-//       this.cartData && this.product.removeToCart(this.cartData.id)
-//       .subscribe((result)=>{
-//         let user = localStorage.getItem('user');
-//         let userId= user && JSON.parse(user).id;
-//         this.product.getCartList(userId)
-//       })
-//     }
-//     this.removeCart=false
-//   }
-
-
-
+  addToCart(){
+    if(this.productData){
+      this.productData.quantity = this.productQuantity;
+      if(!localStorage.getItem('user')){
+        this.product.localAddToCart(this.productData);
+      }
+      else{
+        
+      }
+    }
+    
+  }
 }

@@ -36,4 +36,16 @@ export class ProductService {
   searchProducts(query:string){
     return this.http.get<product[]>(`http://localhost:3000/products?q=${query}`);
   }
+  localAddToCart(data:product){
+    let CartData = [];
+    let LocalCart = localStorage.getItem('LocalCart');
+    if(!LocalCart){
+      localStorage.setItem('LocalCart',JSON.stringify ([data]))
+    }
+    else{
+      CartData = JSON.parse(LocalCart);
+      CartData.push(data);
+      localStorage.setItem('LocalCart',JSON.stringify (CartData))
+      }
+  }
   }
