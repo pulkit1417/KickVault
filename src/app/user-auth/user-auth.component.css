@@ -68,3 +68,6 @@ body {
     text-align: center;
     color: rgb(250, 25, 25);
    }
+   button:disabled{
+    cursor:not-allowed;
+  }

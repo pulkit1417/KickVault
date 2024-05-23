@@ -37,6 +37,14 @@
       "description": "A HP Laptop for Gaming",
       "color": "white",
       "image": "https://imgs.search.brave.com/mX15QwDJn2MWTy1mub4jWc_PX-QzjjA-ytDNSBpzeoA/rs:fit:500:0:0/g:ce/aHR0cHM6Ly9tLm1l/ZGlhLWFtYXpvbi5j/b20vaW1hZ2VzL0kv/OTFYUiswMkFKQkwu/anBn"
+    },
+    {
+      "id": "b354",
+      "name": "Cherry Biscuit",
+      "price": 99,
+      "description": "A delicious biscuit to enjoy while watching movie",
+      "color": "wheat",
+      "image": "https://imgs.search.brave.com/bGz555sgjrsUMmE1IGN4WInZ7ubHmRuEyaN6PQMkgHA/rs:fit:500:0:0/g:ce/aHR0cHM6Ly9tZWRp/YS5pc3RvY2twaG90/by5jb20vaWQvMTc3/MDE5NDU5L3Bob3Rv/L2Jpc2N1aXRzLXdp/dGgtamFtLXRvcHBp/bmdzLWluLXJldGFp/bC1wYWNrYWdlLmpw/Zz9zPTYxMng2MTIm/dz0wJms9MjAmYz1w/MDZxN1NwV1RObzB2/X1UxSld6aVl3Y2RT/aF90SXpxUnFMaVE4/YzNZaWVrPQ"
     }
   ],
   "users": [
@@ -48,18 +56,6 @@
     },
     {
       "id": "8e51",
-      "username": "peter",
-      "email": "peter@user.com",
-      "password": "abc"
-    },
-    {
-      "id": "7074",
-      "username": "peter",
-      "email": "peter@user.com",
-      "password": "abc"
-    },
-    {
-      "id": "28b6",
       "username": "peter",
       "email": "peter@user.com",
       "password": "abc"
