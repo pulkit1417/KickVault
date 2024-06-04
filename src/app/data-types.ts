@@ -21,13 +21,12 @@ export interface product {
 
 export interface cart{
   name:string,
-  price:number,
-  category:string,
+  price:string,
   color:string,
   image:string,
   description:string,
-  id:number| undefined,
+  id:string| undefined,
   quantity:undefined | number,
-  productId:number,
-  userId:number
+  productId:string,
+  userId:string
 }
