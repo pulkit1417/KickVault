@@ -63,48 +63,37 @@
   ],
   "cart": [
     {
-      "id": "c189",
-      "name": "HP Laptop",
-      "price": 50000,
-      "description": "A HP Laptop for Gaming",
-      "color": "white",
-      "image": "https://imgs.search.brave.com/mX15QwDJn2MWTy1mub4jWc_PX-QzjjA-ytDNSBpzeoA/rs:fit:500:0:0/g:ce/aHR0cHM6Ly9tLm1l/ZGlhLWFtYXpvbi5j/b20vaW1hZ2VzL0kv/OTFYUiswMkFKQkwu/anBn",
+      "id": "17a2",
+      "name": "Puma Sneakers",
+      "price": 2000,
+      "description": "Great comfort shoes",
+      "color": "yellow",
+      "image": "https://imgs.search.brave.com/pJr-gCji-D74R7QMtTIvm0EvFkVEH0xtGnio5YbPyJQ/rs:fit:500:0:0/g:ce/aHR0cHM6Ly9tLm1l/ZGlhLWFtYXpvbi5j/b20vaW1hZ2VzL0kv/NTFNSW9GcWFmNEwu/anBn",
       "quantity": 1,
-      "userId": "8e51",
-      "productId": "5a4d"
+      "productId": "ffc5",
+      "userId": null
     },
     {
-      "id": "daef",
+      "id": "cfd1",
+      "name": "Puma Sneakers",
+      "price": 2000,
+      "description": "Great comfort shoes",
+      "color": "yellow",
+      "image": "https://imgs.search.brave.com/pJr-gCji-D74R7QMtTIvm0EvFkVEH0xtGnio5YbPyJQ/rs:fit:500:0:0/g:ce/aHR0cHM6Ly9tLm1l/ZGlhLWFtYXpvbi5j/b20vaW1hZ2VzL0kv/NTFNSW9GcWFmNEwu/anBn",
+      "quantity": 1,
+      "userId": "a9bb",
+      "productId": "ffc5"
+    },
+    {
+      "id": "ae07",
       "name": "Cherry Biscuit",
       "price": 99,
       "description": "A delicious biscuit to enjoy while watching movie",
       "color": "wheat",
       "image": "https://imgs.search.brave.com/bGz555sgjrsUMmE1IGN4WInZ7ubHmRuEyaN6PQMkgHA/rs:fit:500:0:0/g:ce/aHR0cHM6Ly9tZWRp/YS5pc3RvY2twaG90/by5jb20vaWQvMTc3/MDE5NDU5L3Bob3Rv/L2Jpc2N1aXRzLXdp/dGgtamFtLXRvcHBp/bmdzLWluLXJldGFp/bC1wYWNrYWdlLmpw/Zz9zPTYxMng2MTIm/dz0wJms9MjAmYz1w/MDZxN1NwV1RObzB2/X1UxSld6aVl3Y2RT/aF90SXpxUnFMaVE4/YzNZaWVrPQ",
       "quantity": 1,
-      "userId": "8e51",
-      "productId": "b354"
-    },
-    {
-      "id": "418b",
-      "name": "Cherry Biscuit",
-      "price": 99,
-      "description": "A delicious biscuit to enjoy while watching movie",
-      "color": "wheat",
-      "image": "https://imgs.search.brave.com/bGz555sgjrsUMmE1IGN4WInZ7ubHmRuEyaN6PQMkgHA/rs:fit:500:0:0/g:ce/aHR0cHM6Ly9tZWRp/YS5pc3RvY2twaG90/by5jb20vaWQvMTc3/MDE5NDU5L3Bob3Rv/L2Jpc2N1aXRzLXdp/dGgtamFtLXRvcHBp/bmdzLWluLXJldGFp/bC1wYWNrYWdlLmpw/Zz9zPTYxMng2MTIm/dz0wJms9MjAmYz1w/MDZxN1NwV1RObzB2/X1UxSld6aVl3Y2RT/aF90SXpxUnFMaVE4/YzNZaWVrPQ",
-      "quantity": 1,
-      "userId": "8e51",
-      "productId": "b354"
-    },
-    {
-      "id": "2370",
-      "name": "I Watch",
-      "price": "30000",
-      "description": "An Apple watch",
-      "color": "red",
-      "image": "https://imgs.search.brave.com/5iyTiQSzhxJh0LibkORD1JVFtrChipIuW3tZHmaexZ8/rs:fit:500:0:0/g:ce/aHR0cHM6Ly9pNS53/YWxtYXJ0aW1hZ2Vz/LmNvbS9hc3IvZjVk/NDc4OGYtZWNiNy00/MTgxLWFhOTYtYWQ1/MGMxY2IzODI3LjEy/MjFjNDMxYmEyODky/OTk3NzVhZjQwZWYw/Njg5ZTVhLmpwZWc_/b2RuSGVpZ2h0PTYx/MiZvZG5XaWR0aD02/MTImb2RuQmc9RkZG/RkZG",
-      "quantity": 1,
-      "userId": "8e51",
-      "productId": "af4c"
+      "productId": "b354",
+      "userId": null
     }
   ]
 }
