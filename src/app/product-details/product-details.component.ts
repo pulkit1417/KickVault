@@ -38,6 +38,22 @@ export class ProductDetailsComponent implements OnInit {
             this.removeCart = false;
           }
         }
+        let user = localStorage.getItem('user');
+
+        if (user) {
+          let userId = user && JSON.parse(user).id;
+          this.product.getCartList(userId);
+          this.product.cartData.subscribe((result) => {
+            let item = result.filter(
+              (item: product) =>
+                productId.toString() === item.productId?.toString()
+            );
+            if (item.length) {
+              this.cartData = item[0];
+              this.removeCart = true;
+            }
+          });
+        }
       });
   }
 
@@ -54,25 +70,37 @@ export class ProductDetailsComponent implements OnInit {
       if (!localStorage.getItem('user')) {
         this.product.localAddToCart(this.productData);
         this.removeCart = true;
-      } 
-      else{
+      } else {
         let user = localStorage.getItem('user');
-        let userId  = user && JSON.parse(user).id;
-        let cartData:cart = {
-          ...this.productData, userId, productId: this.productData.id,
-        }
+        let userId = user && JSON.parse(user).id;
+        let cartData: cart = {
+          ...this.productData,
+          userId,
+          productId: this.productData.id,
+        };
         delete cartData.id;
-        this.product.addToCart(cartData).subscribe((result)=>{
-          if(result){
-            alert('Product is added in cart')
+        this.product.addToCart(cartData).subscribe((result) => {
+          if (result) {
+            this.product.getCartList(userId);
+            this.removeCart = true;
           }
-        })
+        });
       }
     }
   }
 
-  removeToCart(productId:string){
-    this.product.removeItemFromCart(productId);
-    this.removeCart = false;
+removeToCart(productId:string){
+  if(!localStorage.getItem('user')){
+this.product.removeItemFromCart(productId)
+  }else{
+    
+    this.cartData && this.product.removeToCart(this.cartData.id)
+    .subscribe((result)=>{
+      let user = localStorage.getItem('user');
+      let userId= user && JSON.parse(user).id;
+      this.product.getCartList(userId)
+    })
   }
+  this.removeCart=false
+}
 }

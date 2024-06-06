@@ -21,12 +21,11 @@ export class SellerUpdateProductComponent implements OnInit {
     let productId = this.route.snapshot.paramMap.get('id');
     productId &&
       this.product.getProduct(productId).subscribe((data) => {
-        console.warn(data);
+        
         this.productData = data;
       });
   }
   addproduct(data: product) {
-    console.warn(data);
     if(this.productData){
       data.id = this.productData.id;
     }

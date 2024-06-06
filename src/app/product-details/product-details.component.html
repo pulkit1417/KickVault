@@ -8,15 +8,17 @@
             <h3>Price: &#8377;{{productData.price}}</h3>
             <div>Color :<h3 [style.backgroundColor]="productData.color" class="product-color"></h3></div>
             <h6>Description : {{productData.description}}</h6>
+        <div class="button">
             <button class="form-button">Buy Now</button>
             <button *ngIf="removeCart" class="form-button" (click)=" removeToCart(productData.id)">Remove to Cart</button>
             <button *ngIf="!removeCart" class="form-button" (click)="addToCart()">Add to Cart</button>
+        </div>
             <div class="quantity-group">
-                <button (click)="handleQuantity('min')" >-</button>
+                <button class="quant" (click)="handleQuantity('min')" >-</button>
                 <input type="text" value="{{productQuantity}}" />
-                <button (click)="handleQuantity('plus')">+</button>
+                <button class="quant" (click)="handleQuantity('plus')">+</button>
     
             </div>
         </div>
     </div>
-    </div>
+</div>

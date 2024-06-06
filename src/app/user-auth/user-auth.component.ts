@@ -15,6 +15,7 @@ import { ProductService } from '../services/product.service';
 export class UserAuthComponent implements OnInit {
   showLogin: boolean = true;
   authError: string = '';
+
   constructor(private user: UserService, private product: ProductService) {}
   ngOnInit(): void {
     this.user.userAuthReload();
@@ -31,23 +32,24 @@ export class UserAuthComponent implements OnInit {
   login(data: Login) {
     this.user.userLogin(data);
     this.user.inValidUserAuth.subscribe((result) => {
-      console.warn('apple', result);
       if (result) {
         this.authError = 'Please Enter Valid User Credentials';
-      }
-      else{
+      } else {
         this.localCartToRemoteCart();
       }
     });
   }
+
+
+  
   localCartToRemoteCart() {
     let data = localStorage.getItem('LocalCart');
+    let user = localStorage.getItem('user');
+    let userId = user && JSON.parse(user).id;
     if (data) {
       let cartDataList: product[] = JSON.parse(data);
-      let user = localStorage.getItem('user');
-      let userId = user && JSON.parse(user).id;
 
-      cartDataList.forEach((product: product,index) => {
+      cartDataList.forEach((product: product, index) => {
         let cartData: cart = {
           ...product,
           productId: product.id,
@@ -56,16 +58,20 @@ export class UserAuthComponent implements OnInit {
 
         delete cartData.id;
         setTimeout(() => {
-          this.product.addToCart(cartData).subscribe((result)=>{
-            if(result){
-              console.warn("Item is stored in DB");
+          this.product.addToCart(cartData).subscribe((result) => {
+            if (result) {
             }
-          })
+          });
         }, 500);
-        if(cartDataList.length===index+1){
-          localStorage.removeItem('LocalCart')
+        if (cartDataList.length === index + 1) {
+          localStorage.removeItem('LocalCart');
         }
-      })
-     }
-    }  
+      });
+    }
+    setTimeout(()=>{
+      let newUser = localStorage.getItem('user');
+      let userId = newUser && JSON.parse(newUser).id;
+      this.product.getCartList(userId);
+     },200);
+  }
 }

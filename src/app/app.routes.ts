@@ -2,7 +2,7 @@ import { Routes } from '@angular/router';
 import { HomeComponent } from './home/home.component';
 import { SellerAuthComponent } from './seller-auth/seller-auth.component';
 import { SellerHomeComponent } from './seller-home/seller-home.component';
-import { CartComponent } from './cart/cart.component';
+import { MyCartComponent } from './my-cart/my-cart.component'
 import { sellerAuthGuard } from './seller-auth.guard';
 import { SellerAddProductComponent } from './seller-add-product/seller-add-product.component';
 import { SellerUpdateProductComponent } from './seller-update-product/seller-update-product.component';
@@ -14,7 +14,7 @@ export const routes: Routes = [
   {path: 'seller-auth',component: SellerAuthComponent},
   {path:'seller-home',component:SellerHomeComponent,canActivate:[sellerAuthGuard]},
   {path:'user-auth',component:UserAuthComponent},
-  {path:'cart',component:CartComponent},
+  {path:'my-cart',component:MyCartComponent},
   {path:'seller-add-product',component:SellerAddProductComponent,canActivate:[sellerAuthGuard]},
   {path:'seller-update-product/:id',component:SellerUpdateProductComponent,canActivate:[sellerAuthGuard]},
   {path:'details/:productId',component:ProductDetailsComponent}
