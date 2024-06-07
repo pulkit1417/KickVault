@@ -1,0 +1,58 @@
+ h1 {
+    text-align: center;
+    margin-top: 2rem;
+  }
+  
+  .order-container {
+    max-width: 800px;
+    margin: 0 auto;
+    margin-bottom: 5rem;
+  }
+  
+  .order-item {
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid #ddd;
+    padding: 20px 0;
+  }
+  
+  .order-item img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    margin-right: 20px;
+  }
+  
+  .order-details {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+  }
+  
+  .order-details p {
+    margin: 0 10px;
+  }
+  
+  .cancel-btn {
+    background-color: #ff9900;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    border-radius: 5px;
+  }
+  
+  .cancel-btn:hover {
+    background-color: #e68a00;
+  }
+
+  p{
+    font-size: 1.1rem;
+    color:#45a049;
+    text-align: center;
+}

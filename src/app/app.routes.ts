@@ -9,6 +9,7 @@ import { SellerUpdateProductComponent } from './seller-update-product/seller-upd
 import { ProductDetailsComponent } from './product-details/product-details.component';
 import { UserAuthComponent } from './user-auth/user-auth.component';
 import { CheckoutComponent } from './checkout/checkout.component';
+import { MyOrdersComponent } from './my-orders/my-orders.component';
 
 export const routes: Routes = [
   {path: '',component: HomeComponent},
@@ -19,5 +20,6 @@ export const routes: Routes = [
   {path:'seller-add-product',component:SellerAddProductComponent,canActivate:[sellerAuthGuard]},
   {path:'seller-update-product/:id',component:SellerUpdateProductComponent,canActivate:[sellerAuthGuard]},
   {path:'details/:productId',component:ProductDetailsComponent},
-  {path:'checkout',component:CheckoutComponent}
+  {path:'checkout',component:CheckoutComponent},
+  {path:'my-orders',component:MyOrdersComponent},
 ];

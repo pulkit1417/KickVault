@@ -40,6 +40,7 @@ export class MyCartComponent implements OnInit {
       );
     });
   }
+
   checkout() {
     this.router.navigate(['/checkout']);
   }

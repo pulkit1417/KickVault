@@ -25,6 +25,7 @@
       <li><a routerLink="/seller-auth" class="fs-5">Seller</a></li>
       <li><a title="User Name" class="fs-5">{{userName | titlecase}}</a></li>
       <li><a (click)="userLogout()" class="fs-5">Logout</a></li>
+      <li><a routerLink="my-orders" class="fs-5">My Orders</a></li>
       <li><a routerLink="/my-cart" class="fs-5">Cart({{cartItems}})</a></li>
     </ul>
     <ul *ngSwitchCase="'seller'" class="nav-menu">

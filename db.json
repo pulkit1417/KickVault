@@ -88,56 +88,23 @@
       "quantity": 1,
       "userId": "b8bd",
       "productId": "b354"
-    },
-    {
-      "id": "cb99",
-      "name": "Cherry Biscuit",
-      "price": 99,
-      "description": "A delicious biscuit to enjoy while watching movie",
-      "color": "wheat",
-      "image": "https://imgs.search.brave.com/bGz555sgjrsUMmE1IGN4WInZ7ubHmRuEyaN6PQMkgHA/rs:fit:500:0:0/g:ce/aHR0cHM6Ly9tZWRp/YS5pc3RvY2twaG90/by5jb20vaWQvMTc3/MDE5NDU5L3Bob3Rv/L2Jpc2N1aXRzLXdp/dGgtamFtLXRvcHBp/bmdzLWluLXJldGFp/bC1wYWNrYWdlLmpw/Zz9zPTYxMng2MTIm/dz0wJms9MjAmYz1w/MDZxN1NwV1RObzB2/X1UxSld6aVl3Y2RT/aF90SXpxUnFMaVE4/YzNZaWVrPQ",
-      "quantity": 1,
-      "userId": "a350",
-      "productId": "b354"
-    },
-    {
-      "id": "818f",
-      "name": "Puma Sneakers",
-      "price": 2000,
-      "description": "Great comfort shoes",
-      "color": "yellow",
-      "image": "https://imgs.search.brave.com/pJr-gCji-D74R7QMtTIvm0EvFkVEH0xtGnio5YbPyJQ/rs:fit:500:0:0/g:ce/aHR0cHM6Ly9tLm1l/ZGlhLWFtYXpvbi5j/b20vaW1hZ2VzL0kv/NTFNSW9GcWFmNEwu/anBn",
-      "quantity": 1,
-      "userId": "a350",
-      "productId": "ffc5"
-    },
-    {
-      "id": "2b40",
-      "name": "I Watch",
-      "price": "30000",
-      "description": "An Apple watch",
-      "color": "red",
-      "image": "https://imgs.search.brave.com/5iyTiQSzhxJh0LibkORD1JVFtrChipIuW3tZHmaexZ8/rs:fit:500:0:0/g:ce/aHR0cHM6Ly9pNS53/YWxtYXJ0aW1hZ2Vz/LmNvbS9hc3IvZjVk/NDc4OGYtZWNiNy00/MTgxLWFhOTYtYWQ1/MGMxY2IzODI3LjEy/MjFjNDMxYmEyODky/OTk3NzVhZjQwZWYw/Njg5ZTVhLmpwZWc_/b2RuSGVpZ2h0PTYx/MiZvZG5XaWR0aD02/MTImb2RuQmc9RkZG/RkZG",
-      "quantity": 1,
-      "userId": "a350",
-      "productId": "af4c"
     }
   ],
   "orders": [
     {
-      "id": "17a9",
-      "email": "peter@user.com",
-      "address": "ksdncocbps",
-      "phone": "1111",
-      "totalPrice": 32015.25,
+      "id": "9efd",
+      "email": "",
+      "address": "",
+      "phone": "",
+      "totalPrice": 2041.67,
       "userId": "a350"
     },
     {
-      "id": "e90d",
-      "email": "gupta.pulkit2408@gmail.com",
-      "address": "kxzhcasv",
-      "phone": "222",
-      "totalPrice": 32015.25,
+      "id": "6388",
+      "email": "",
+      "address": "",
+      "phone": "",
+      "totalPrice": 298800,
       "userId": "a350"
     }
   ]
