@@ -122,5 +122,23 @@
       "userId": "a350",
       "productId": "af4c"
     }
+  ],
+  "orders": [
+    {
+      "id": "17a9",
+      "email": "peter@user.com",
+      "address": "ksdncocbps",
+      "phone": "1111",
+      "totalPrice": 32015.25,
+      "userId": "a350"
+    },
+    {
+      "id": "e90d",
+      "email": "gupta.pulkit2408@gmail.com",
+      "address": "kxzhcasv",
+      "phone": "222",
+      "totalPrice": 32015.25,
+      "userId": "a350"
+    }
   ]
 }

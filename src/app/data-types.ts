@@ -39,3 +39,11 @@ export interface priceSummary{
   shipping:number,
   total:number
 }
+
+export interface order  {
+  email:string,
+  address:string,
+  phone:string,
+  totalPrice:number,
+  userId:string
+}
