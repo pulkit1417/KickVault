@@ -9,7 +9,7 @@
           <p>Price: &#8377;{{ cart.price }}</p>
           <p>Quantity: {{ cart.quantity }}</p>
         </div>
-        <button class="remove-btn">Remove</button>
+        <button class="remove-btn" (click)="removeFromCart(cart.id)">Remove</button>
       </li>
     </ul>
     <div class="cart-summary">

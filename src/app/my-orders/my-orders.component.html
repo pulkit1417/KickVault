@@ -1,8 +1,8 @@
 <h1>My Orders</h1>
-<p>{{cancelOrderMsg}}</p>
+<p class="cancel-msg">{{cancelOrderMsg}}</p>
 <div class="order-container">
   <div class="order-item" *ngFor="let order of orderData">
-    <img src="http://via.placeholder.com/100x100" alt="Product Image" />
+    <img src="../../assets/images/checkout.png" alt="Product Image" />
     <div class="order-details">
       <p>Order ID: #{{ order.id }}</p>
       <p>Price: &#8377;{{ order.totalPrice }}</p>

@@ -25,7 +25,6 @@ export class MyOrdersComponent implements OnInit {
         this.cancelOrderMsg="Your Order has been Cancled"
         this.getOrderList();
         setTimeout(()=>{
-          this.router.navigate(['']);
           this.cancelOrderMsg=undefined;
         },3000)
       });
