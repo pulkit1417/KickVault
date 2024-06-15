@@ -67,8 +67,13 @@
 
 .button-group {
   display: flex;
-  gap: 1rem;
+  gap: 1rem; /* Adjust the gap between button groups */
   margin-top: 20px;
+}
+
+.button {
+  display: flex;
+  gap: 1rem; /* Adjust the gap between buttons inside each group */
 }
 
 .form-button {
@@ -90,30 +95,30 @@
 
 @media (max-width: 767px) {
   .product-details {
-    flex-direction: column;
-    align-items: center;
-    margin-left: 0;
-    padding: 0 1rem;
+      flex-direction: column;
+      align-items: center;
+      margin-left: 0;
+      padding: 0 1rem;
   }
 
   .image {
-    width: 100%;
-    margin-bottom: 10px; /* Adjusted margin for closer alignment */
+      width: 100%;
+      margin-bottom: 10px; /* Adjusted margin for closer alignment */
   }
 
   .details {
-    margin-left: 0;
-    padding: 0;
+      margin-left: 0;
+      padding: 0;
   }
 
   .quantity-group {
-    margin-top: 10px;
+      margin-top: 10px;
   }
 
   .button-group {
-    flex-direction: column;
-    gap: 10px;
-    width: 100%;
-    align-items: center;
+      flex-direction: column;
+      gap: 10px;
+      width: 100%;
+      align-items: center;
   }
 }
