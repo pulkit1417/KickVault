@@ -1,8 +1,18 @@
-h1{
-    text-align: center;
-    margin-top: 1rem;
+/* General styles */
+h1 {
+  text-align: center;
+  margin-top: 1rem;
+  font-size: 2rem;
 }
-.container {
+
+p.order-message {
+  font-size: 1.2rem;
+  color: #45a049;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.checkout-container {
   display: flex;
   justify-content: space-between;
   margin-top: 3rem;
@@ -10,70 +20,108 @@ h1{
 }
 
 .left-section {
-  flex-basis: 48%;
+  flex-basis: 45%; /* Adjusted for better balance */
+  margin-left: 2rem;
 }
 
 .right-section {
-  flex-basis: 48%;
+  flex-basis: 45%; /* Adjusted for better balance */
   background-color: #f8f8f8;
   padding: 20px;
   border-radius: 8px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin-right: 2rem;
+}
+
+/* Form styles */
+form {
+  margin-top: 1rem;
+}
+
+.form-group {
+  margin-bottom: 1rem;
 }
 
 form label {
   display: block;
   margin-bottom: 5px;
+  font-weight: bold;
 }
 
 form input,
 form textarea {
   width: 100%;
-  padding: 8px;
+  padding: 10px;
   margin-bottom: 15px;
   border: 1px solid #ccc;
   border-radius: 4px;
 }
 
-form button {
+button.btn-place-order {
   background-color: #4caf50;
   color: white;
-  padding: 10px 20px;
+  padding: 12px 24px;
   border: none;
   border-radius: 4px;
   cursor: pointer;
+  transition: background-color 0.3s ease;
 }
 
+button.btn-place-order:hover {
+  background-color: #45a049;
+}
+
+/* Order details styles */
 .order-details {
   background-color: #ffffff;
   padding: 20px;
   border-radius: 8px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin-top: 1rem;
 }
 
-.order-details p {
+.order-details h4 {
+  font-size: 1.2rem;
   margin-bottom: 10px;
-  font-weight: bold;
 }
 
+.order-details .total-price {
+  color: #4caf50;
+}
+
+.order-details h5 {
+  margin-top: 1rem;
+  font-size: 1.1rem;
+}
+
+/* Payment options styles */
 .payment-options {
   margin-top: 10px;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
 }
 
 .payment-option {
   display: flex;
   align-items: center;
   gap: 5px;
+  margin-bottom: 8px;
 }
 
 .payment-option input[type="radio"] {
-  margin-right: 0;
+  margin-right: 8px;
 }
-p{
-  font-size: 1.1rem;
-  color:#45a049;
-  text-align: center;
+
+.payment-option label {
+  font-size: 1rem;
+}
+
+/* Responsive adjustments */
+@media (max-width: 991px) {
+  .checkout-container {
+    flex-direction: column;
+  }
+
+  .left-section,
+  .right-section {
+    width: 100%;
+  }
 }

@@ -15,7 +15,7 @@ export class SellerService {
   userSignUp(data: SignUp) {
     this.http
       .post('https://database-yme9.onrender.com/seller', data, { observe: 'response' })
-      .subscribe((result) => {
+      .subscribe((result: { body: any; }) => {
         this.isSellerLoggedIn.next(true);
         localStorage.setItem('seller', JSON.stringify(result.body));
         this.router.navigate(['seller-home']);

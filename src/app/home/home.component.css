@@ -1,7 +1,6 @@
 .carousel {
   position: relative;
-  top:2rem;
-  
+  top: 2rem;
   width: 100%;
   height: 500px;
   overflow: hidden;
@@ -47,23 +46,23 @@
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  color: #000; 
-  text-decoration: none; 
+  color: #000;
+  text-decoration: none;
   background-color: transparent;
   cursor: pointer;
   z-index: 1;
 }
 
 .carousel-control-prev {
-  left: 23rem; 
+  left: 23rem;
 }
 
 .carousel-control-next {
-  right: 23rem; 
+  right: 23rem;
 }
 
 .carousel-control-icon {
-  font-size: 4rem; 
+  font-size: 4rem;
 }
 
 .wrap {
@@ -85,14 +84,22 @@
 
 .product-item {
   padding: 10px;
-  flex: 0 0 50%;
-  max-width: 50%;
+  flex: 0 0 calc(33.33% - 20px); /* Calculate width for 3 items per row with 10px padding */
+  max-width: calc(33.33% - 20px); /* Calculate max-width for 3 items per row with 10px padding */
+  box-sizing: border-box; /* Include padding and border in element's total width */
 }
 
-@media (min-width: 768px) {
+@media (max-width: 991px) {
   .product-item {
-    flex: 0 0 33.33%;
-    max-width: 33.33%;
+    flex: 0 0 calc(50% - 20px); /* Two items per row on medium screens */
+    max-width: calc(50% - 20px);
+  }
+}
+
+@media (max-width: 767px) {
+  .product-item {
+    flex: 0 0 calc(100% - 20px); /* One item per row on small screens */
+    max-width: calc(100% - 20px);
   }
 }
 
@@ -162,4 +169,11 @@
 
 .add-to-cart:hover {
   background-color: #1e7e34;
+}
+
+@media (min-width: 768px) {
+  .product-item {
+    flex: 0 0 33.33%;
+    max-width: 33.33%;
+  }
 }

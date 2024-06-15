@@ -1,33 +1,44 @@
 <h1>Checkout</h1>
-<p>{{orderMsg}}</p>
-<div class="container">
+<p class="order-message">{{ orderMsg }}</p>
+
+<div class="checkout-container">
   <div class="left-section">
     <h2>Add Shipping Address</h2>
     <form #orderData="ngForm" (ngSubmit)="orderNow(orderData.value)">
-      <label for="email">Email:</label>
-      <input type="email" id="email" name="email" ngModel required />
-
-      <label for="address">Address:</label>
-      <textarea id="address" name="address" ngModel required></textarea>
-
-      <label for="phone">Phone Number:</label>
-      <input type="tel" id="phone" name="phone" ngModel required />
-
-      <button type="submit" (click)="orderNow">Place Order</button>
+      <div class="form-group">
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" ngModel required />
+      </div>
+      <div class="form-group">
+        <label for="address">Address:</label>
+        <textarea id="address" name="address" ngModel required></textarea>
+      </div>
+      <div class="form-group">
+        <label for="phone">Phone Number:</label>
+        <input type="tel" id="phone" name="phone" ngModel required />
+      </div>
+      <button type="submit" class="btn-place-order">Place Order</button>
     </form>
   </div>
+
   <div class="right-section">
     <h2>Order Summary</h2>
     <div class="order-details">
-      <h4>Order Total: &#8377;{{totalPrice}}</h4>
+      <h4>Order Total: <span class="total-price">&#8377;{{ totalPrice }}</span></h4>
       <h5>Payment Mode:</h5>
       <div class="payment-options">
-        <input type="radio" id="pod" name="payment" value="pod" />
-        <label for="pod">Pay on Delivery</label>
-        <input type="radio" id="credit" name="payment" value="credit" />
-        <label for="credit">Credit Card</label>
-        <input type="radio" id="paypal" name="payment" value="paypal" />
-        <label for="paypal">PayPal</label>
+        <div class="payment-option">
+          <input type="radio" id="pod" name="payment" value="pod" />
+          <label for="pod">Pay on Delivery</label>
+        </div>
+        <div class="payment-option">
+          <input type="radio" id="credit" name="payment" value="credit" />
+          <label for="credit">Credit Card</label>
+        </div>
+        <div class="payment-option">
+          <input type="radio" id="paypal" name="payment" value="paypal" />
+          <label for="paypal">PayPal</label>
+        </div>
       </div>
     </div>
   </div>

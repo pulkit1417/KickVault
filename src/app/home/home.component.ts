@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { ProductService } from '../services/product.service';
 import { product } from '../data-types';
 import { RouterLink } from '@angular/router';
+import { NgForm } from '@angular/forms';
   
 
 @Component({
@@ -13,8 +14,13 @@ import { RouterLink } from '@angular/router';
   styleUrl: './home.component.css'
 })
 export class HomeComponent implements OnInit {
+orderNow(arg0: any) {
+throw new Error('Method not implemented.');
+}
   popularProducts:undefined|product[]
   trendyProducts:undefined | product[];
+orderMsg: any;
+totalPrice: any;
   constructor(private product:ProductService){}
   currentSlide = 0;
 

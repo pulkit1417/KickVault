@@ -72,7 +72,7 @@ export class ProductService {
   getCartList(userId: string) {
     return this.http.get<product[]>(`https://database-yme9.onrender.com/cart?userId=${userId}`, {
       observe: 'response'
-    }).subscribe((result) => {
+    }).subscribe((result:any) => {
       if (result && result.body) {
         this.cartData.emit(result.body);
       }
@@ -101,7 +101,7 @@ export class ProductService {
   }
 
   deleteCartItems(cartId:string){
-    return this.http.delete(`https://database-yme9.onrender.com/cart/${cartId}`,{observe:'response'}).subscribe((result)=>{
+    return this.http.delete(`https://database-yme9.onrender.com/cart/${cartId}`,{observe:'response'}).subscribe((result: any)=>{
       if(result){
         this.cartData.emit([])
       }
