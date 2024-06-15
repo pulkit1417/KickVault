@@ -10,36 +10,36 @@ export class ProductService {
 
   constructor(private http: HttpClient, private router: Router) {}
   addProduct(data: product) {
-    return this.http.post('http://localhost:3000/products', data);
+    return this.http.post('https://database-yme9.onrender.com/products', data);
   }
 
   productList() {
-    return this.http.get<product[]>('http://localhost:3000/products');
+    return this.http.get<product[]>('https://database-yme9.onrender.com/products');
   }
 
   deleteProduct(id: string) {
-    return this.http.delete(`http://localhost:3000/products/${id}`);
+    return this.http.delete(`https://database-yme9.onrender.com/products/${id}`);
   }
 
   getProduct(id: string) {
-    return this.http.get<product>(`http://localhost:3000/products/${id}`);
+    return this.http.get<product>(`https://database-yme9.onrender.com/products/${id}`);
   }
 
   updateProduct(product: product) {
     return this.http.put<product>(
-      `http://localhost:3000/products/${product.id}`,
+      `https://database-yme9.onrender.com/products/${product.id}`,
       product
     );
   }
   popularProducts() {
-    return this.http.get<product[]>('http://localhost:3000/products?_limit=3');
+    return this.http.get<product[]>('https://database-yme9.onrender.com/products?_limit=3');
   }
   trendyProducts() {
-    return this.http.get<product[]>('http://localhost:3000/products?_limit=8');
+    return this.http.get<product[]>('https://database-yme9.onrender.com/products?_limit=8');
   }
   searchProducts(query: string) {
     return this.http.get<product[]>(
-      `http://localhost:3000/products?q=${query}`
+      `https://database-yme9.onrender.com/products?q=${query}`
     );
   }
   localAddToCart(data: product) {
@@ -66,11 +66,11 @@ export class ProductService {
   }
 
   addToCart(cartData:cart){
-    return this.http.post('http://localhost:3000/cart', cartData);
+    return this.http.post('https://database-yme9.onrender.com/cart', cartData);
   }
 
   getCartList(userId: string) {
-    return this.http.get<product[]>(`http://localhost:3000/cart?userId=${userId}`, {
+    return this.http.get<product[]>(`https://database-yme9.onrender.com/cart?userId=${userId}`, {
       observe: 'response'
     }).subscribe((result) => {
       if (result && result.body) {
@@ -80,28 +80,28 @@ export class ProductService {
   }
 
   removeToCart(cartId:string){
-    return this.http.delete(`http://localhost:3000/cart/${cartId}`);
+    return this.http.delete(`https://database-yme9.onrender.com/cart/${cartId}`);
   }
 
   currentCart(){
     
     let userStore = localStorage.getItem('user');
     let userData = userStore && JSON.parse(userStore);
-    return this.http.get<cart[]>(`http://localhost:3000/cart?userId=${userData.id}`);
+    return this.http.get<cart[]>(`https://database-yme9.onrender.com/cart?userId=${userData.id}`);
   }
 
   orderNow(data:order){
-    return this.http.post('http://localhost:3000/orders', data)
+    return this.http.post('https://database-yme9.onrender.com/orders', data)
   }
 
   orderList(){
     let userStore = localStorage.getItem('user');
     let userData = userStore && JSON.parse(userStore);
-    return this.http.get<order[]>(`http://localhost:3000/orders?userId=${userData.id}`)
+    return this.http.get<order[]>(`https://database-yme9.onrender.com/orders?userId=${userData.id}`)
   }
 
   deleteCartItems(cartId:string){
-    return this.http.delete(`http://localhost:3000/cart/${cartId}`,{observe:'response'}).subscribe((result)=>{
+    return this.http.delete(`https://database-yme9.onrender.com/cart/${cartId}`,{observe:'response'}).subscribe((result)=>{
       if(result){
         this.cartData.emit([])
       }
@@ -109,7 +109,7 @@ export class ProductService {
   }
 
   cancelOrder(orderId:string){
-    return this.http.delete(`http://localhost:3000/orders/${orderId}`)
+    return this.http.delete(`https://database-yme9.onrender.com/orders/${orderId}`)
   }
 
 }
