@@ -116,7 +116,8 @@
 }
 
 .product-image {
-  height: 200px;
+  margin-top: 5px;
+  height: 250px;
   overflow: hidden;
 }
 

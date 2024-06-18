@@ -1,6 +1,7 @@
 <div class="product-list">
-    <h1>Product List</h1>
-    <p class="message-p">{{ deleteProductMessage }}</p>
+  <h1>Product List</h1>
+  <p class="message-p">{{ deleteProductMessage }}</p>
+  <div class="table-wrapper">
     <table>
       <thead>
         <tr>
@@ -19,11 +20,12 @@
           <td>&#8377;{{ item.price }}</td>
           <td id="desc">{{ item.description }}</td>
           <td>{{ item.color }}</td>
-           <td>
+          <td>
             <fa-icon (click)="deleteProduct(item.id)" [icon]="icon"></fa-icon>
             <a class="adjust-update-link" routerLink="/seller-update-product/{{item.id}}"> <fa-icon  [icon]="iconEdit"></fa-icon></a>
           </td>
         </tr>
       </tbody>
     </table>
-  </div>      
+  </div>
+</div>

@@ -1,5 +1,6 @@
 <nav>
-      <a class="brand" routerLink="/">E-Comm</a>
+    <a routerLink="/"><img src="../../favicon.ico" alt="Brand_logo" ></a>
+      <a class="brand" routerLink="/">KickValut</a>
     <div *ngIf="menuType!=='seller'" class="search-container">
       <form>
         <input type="text"
@@ -21,9 +22,9 @@
       <li><a  class="fs-5">Cart({{cartItems}})</a></li>
     </ul>
     <ul *ngSwitchCase="'user'" class="nav-menu">
+      <li><a title="User Name" class="fs-5">Hi, {{userName | titlecase}}</a></li>
       <li><a routerLink="/" class="fs-5">Home</a></li>
       <li><a routerLink="/seller-auth" class="fs-5">Seller</a></li>
-      <li><a title="User Name" class="fs-5">{{userName | titlecase}}</a></li>
       <li><a (click)="userLogout()" class="fs-5">Logout</a></li>
       <li><a routerLink="my-orders" class="fs-5">My Orders</a></li>
       <li><a [routerLink]="cartItems>0?'/my-cart':null" class="fs-5">Cart({{cartItems}})</a></li>
