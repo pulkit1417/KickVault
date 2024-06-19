@@ -12,7 +12,7 @@ export class UserService {
 
   constructor(private http :HttpClient, private router : Router) { }
     userSignUp(user:SignUp){
-      this.http.post("https://database-21b41-default-rtdb.firebaseio.com/users",user,{observe:'response'})
+      this.http.post("https://database-yme9.onrender.com/users",user,{observe:'response'})
       .subscribe((result)=>{
         if(result){
           localStorage.setItem('user',JSON.stringify(result.body));
@@ -23,7 +23,7 @@ export class UserService {
     }
 
     userLogin(data:Login){
-      this.http.get<SignUp[]>(`https://database-21b41-default-rtdb.firebaseio.com/users?email=${data.email}&password=${data.password}`,
+      this.http.get<SignUp[]>(`https://database-yme9.onrender.com/users?email=${data.email}&password=${data.password}`,
       {observe:'response'}
       ).subscribe((result)=>{
         if(result && result.body?.length){

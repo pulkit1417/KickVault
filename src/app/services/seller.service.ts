@@ -14,7 +14,7 @@ export class SellerService {
   constructor(private http: HttpClient, private router: Router) {}
   userSignUp(data: SignUp) {
     this.http
-      .post('https://database-21b41-default-rtdb.firebaseio.com/seller', data, { observe: 'response' })
+      .post('https://database-yme9.onrender.com/seller', data, { observe: 'response' })
       .subscribe((result: { body: any; }) => {
         this.isSellerLoggedIn.next(true);
         localStorage.setItem('seller', JSON.stringify(result.body));
@@ -31,7 +31,7 @@ export class SellerService {
   userLogin(data: Login) {
     this.http
       .get(
-        `https://database-21b41-default-rtdb.firebaseio.com/seller?email=${data.email}&password=${data.password}`,
+        `https://database-yme9.onrender.com/seller?email=${data.email}&password=${data.password}`,
         { observe: 'response' }
       )
       .subscribe((result: any) => {
