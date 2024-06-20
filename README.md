@@ -2,7 +2,7 @@
 This project is a fully functional e-commerce website built using Angular 17, HTML, CSS, and TypeScript. It provides a seamless shopping experience with features such as product listings, a shopping cart, checkout process, and user authentication.
 
 ### Live Demo:
-Check out the live demo of the project here kick-vault.vercel.app/.
+Check out the live demo of the project here [kick-vault.vercel.app/](https://kick-vault.vercel.app/).
 
 ### Features:
 -Product Listings: Browse a variety of products with detailed descriptions, images, and prices.<br>
