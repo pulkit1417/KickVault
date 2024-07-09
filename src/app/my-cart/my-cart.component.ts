@@ -18,7 +18,7 @@ export class MyCartComponent implements OnInit {
     discount: 0,
     tax: 0,
     shipping: 0,
-    total: 0,
+    total: 0
   };
   constructor(private product: ProductService, private router: Router) {}
 
