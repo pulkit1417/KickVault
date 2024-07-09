@@ -35,7 +35,7 @@ export class ProductService {
     return this.http.get<product[]>('https://database-yme9.onrender.com/products?_limit=3');
   }
   trendyProducts() {
-    return this.http.get<product[]>('https://database-yme9.onrender.com/products?_limit=8');
+    return this.http.get<product[]>('https://database-yme9.onrender.com/products?_limit=9');
   }
   searchProducts(query: string) {
     return this.http.get<product[]>(
