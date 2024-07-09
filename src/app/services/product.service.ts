@@ -22,7 +22,7 @@ export class ProductService {
   }
 
   getProduct(id: string) {
-    return this.http.get<product>(`https://database-yme9.onrender.com/products/${id}`);
+    return this.http.get<product>(`https://database-yme9.onrender.com/products/${id}`)
   }
 
   updateProduct(product: product) {
