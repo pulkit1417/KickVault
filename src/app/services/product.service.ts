@@ -1,7 +1,7 @@
 import { EventEmitter, Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
-import { cart, order, product } from '../data-types';
+import { cart, order, product, saleItem } from '../data-types';
 @Injectable({
   providedIn: 'root',
 })
@@ -35,8 +35,13 @@ export class ProductService {
     return this.http.get<product[]>('https://database-yme9.onrender.com/products?_limit=3');
   }
   trendyProducts() {
-    return this.http.get<product[]>('https://database-yme9.onrender.com/products?_limit=9');
+    return this.http.get<product[]>('https://database-yme9.onrender.com/products?_limit=8');
   }
+
+  saleProducts(){
+    return this.http.get<saleItem[]>('https://database-yme9.onrender.com/saleItem?_limit=4')
+  }
+
   searchProducts(query: string) {
     return this.http.get<product[]>(
       `https://database-yme9.onrender.com/products?q=${query}`

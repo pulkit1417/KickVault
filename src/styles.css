@@ -9,11 +9,11 @@ html::-webkit-scrollbar {
 }
 
 html::-webkit-scrollbar-track {
-  background: #333;
+  background:  #1a1a1a;
 }
 
 html::-webkit-scrollbar-thumb {
-  background: #29bf12;
+  background: #e53935;
   border-radius: 10px;
 }
 

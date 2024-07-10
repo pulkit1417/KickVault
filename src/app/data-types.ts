@@ -18,6 +18,9 @@ export interface product {
   id:string;
   quantity: undefined | number;
   productId: string | undefined;
+  reviewCount:string,
+  rating:number,
+  isWished:boolean,
 }
 
 export interface cart{
@@ -47,4 +50,13 @@ export interface order  {
   totalPrice:number,
   userId:string,
   id:string|undefined,
+}
+
+export interface saleItem{
+  id:string,
+  name:string,
+  image:string,
+  originalPrice:string,
+  salePrice:string,
+  discountPercentage:string,
 }

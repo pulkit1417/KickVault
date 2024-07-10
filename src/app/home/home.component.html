@@ -1,3 +1,4 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">	
 	<div class="carousel">
 		<ng-container *ngIf="popularProducts && popularProducts.length > 0">
 			<div *ngFor="let product of popularProducts; let i = index" [class.active]="i === currentSlide" class="carousel-item">
@@ -17,21 +18,59 @@
 		<span class="carousel-control-icon" aria-hidden="true">&rsaquo;</span>
 		</a>
 	</div>
-	<div class="wrap">
-		<div class="product-list-wrapper">
-		  <h1>Trendy Products</h1>
-		  <div class="row">
-			<div class="product-item" *ngFor="let item of trendyProducts">
-			  <div class="product-card">
-				<div class="product-image">
+	<div class="product-showcase">
+		<h1 class="showcase-title">Trendy Products</h1>
+		<div class="product-grid">
+		  <div class="product-card" *ngFor="let item of trendyProducts">
+			<div class="product-image">
+			  <img [src]="item.image" [alt]="item.name">
+			</div>
+			<div class="product-info">
+			  <h3 class="product-name">{{ item.name }}</h3>
+			  <p class="product-price">&#8377;{{ item.price }}</p>
+			  <div class="product-rating">
+				<span class="stars">
+				  <ng-container *ngFor="let star of [1, 2, 3, 4, 5]">
+					<i class="fas fa-star" *ngIf="star <= item.rating"></i>
+					<i class="fas fa-star-half-alt" *ngIf="star - 0.5 === item.rating"></i>
+					<i class="far fa-star" *ngIf="star > item.rating && star - 0.5 > item.rating"></i>
+				  </ng-container>
+				</span>
+				<span class="review-count">({{ item.reviewCount }})</span>
+			  </div>
+			</div>
+			<div class="product-actions">
+			  <a [routerLink]="['/details', item.id]" class="btn-details">View Details</a>
+			  <button class="btn-wishlist" (click)="toggleWishlist(item)">
+				<i [class.fa-solid]="item.isWished" [class.fa-regular]="!item.isWished" class="fa fa-heart"></i>
+				{{ item.isWished ? 'Remove from Wishlist' : 'Add to Wishlist' }}
+			  </button>
+			</div>
+		  </div>
+		</div>
+	  </div>
+	  
+	  
+
+	  <div class="wrap">
+		<div class="sale-items-wrapper">
+		  <h1>Flash Sale</h1>
+		  <div class="sale-grid">
+			<div class="sale-item" *ngFor="let item of saleItems">
+			  <div class="sale-card">
+				<div class="sale-image">
 				  <img [src]="item.image" [alt]="item.name">
+				  <span class="discount-badge">-{{item.discountPercentage}}%</span>
 				</div>
-				<div class="product-details">
-				  <h3 class="name-head">{{ item.name }}</h3>
-				  <p class="price">Price: &#8377;{{ item.price }}</p>
-				  <div class="actions">
-					<a [routerLink]="['/details', item.id]" class="btn view-details">View Details</a>
-					<a href="#" class="btn add-to-cart" >Add to Cart</a>
+				<div class="sale-content">
+				  <h3 class="sale-title">{{ item.name }}</h3>
+				  <div class="sale-price-container">
+					<span class="sale-original-price">&#8377;{{ item.originalPrice }}</span>
+					<span class="sale-new-price">&#8377;{{ item.salePrice }}</span>
+				  </div>
+				  <div class="sale-actions">
+					<a [routerLink]="['/details', item.id]" class="btn-sale-details">View Details</a>
+					<button class="btn-add-to-cart">Add to Cart</button>
 				  </div>
 				</div>
 			  </div>
@@ -39,3 +78,4 @@
 		  </div>
 		</div>
 	  </div>
+	  

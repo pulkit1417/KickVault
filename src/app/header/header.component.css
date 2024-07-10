@@ -2,28 +2,37 @@ nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #333;
+  background-color: #1a1a1a;
   color: #fff;
   padding: 10px 20px;
-  font-family: 'Open Sans', sans-serif;
 }
 
+.brand-info {
+  display: flex;
+  align-items: center;
+  padding: 10px 20px;
+  border-radius: 8px;
+  transition: background-color 0.3s ease;
+  text-decoration: none;
+  margin-left: -1rem;
+}
+.brand-logo {
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+}
 .brand {
   text-decoration: none;
   color: #fff;
   font-size: 28px;
   font-weight: bold;
-  margin-left: 8px;
-}
-img{
-  height:50px;
-  width:50px;
+  margin-left: 12px;
 }
 
 /* Search Container */
 .search-container {
-  margin-left: 3rem;
   flex-grow: 1;
+  margin-left: 0.3rem;
 }
 
 .search-container input[type="text"] {
@@ -80,12 +89,13 @@ a {
 
 .suggested-search {
   position: absolute;
-  top: 40px;
+  margin-top: 0.1rem;
   z-index: 10;
   display: list-item !important;
   border: 1px solid #ddd;
   background-color: #fff;
-  width: 300px;
+  width: 480px;
+  list-style-type: none;
 }
 
 .suggested-search li {
@@ -95,7 +105,7 @@ a {
 
 .suggested-search li a {
   cursor: pointer;
-  color: #29bf12;
+  color: #1a1a1a;
 }
 
 /* Media Queries */
@@ -131,4 +141,10 @@ a {
     margin-left: 0;
     margin-bottom: 10px;
   }
+}
+
+
+.fa-heart{
+  font-size: 24px;
+  color:red;
 }

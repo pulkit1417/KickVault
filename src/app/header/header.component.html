@@ -1,11 +1,14 @@
 <nav>
-    <a routerLink="/"><img src="../../favicon.ico" alt="Brand_logo" ></a>
-      <a class="brand" routerLink="/">KickVault</a>
+  <div class="brand-info" routerLink="/">
+    <a><img src="../../favicon.ico" alt="Brand_logo" class="brand-logo"></a>
+    <a class="brand">KickVault</a>
+  </div>
+  
     <div *ngIf="menuType!=='seller'" class="search-container">
       <form>
         <input type="text"
         #searchInput
-        (keyup)="searchProducts($event)" (blur)="hideSearch()" placeholder="Search Products" />
+        (keyup)="searchProducts($event)" (blur)="hideSearch()" placeholder="Search Sneakers" />
         <button (click)="submitSearch(searchInput.value)" >Search</button>
         <ul class="suggested-search" *ngIf="searchResult">
           <li *ngFor="let item of searchResult">
@@ -28,6 +31,7 @@
       <li><a (click)="userLogout()" class="fs-5">Logout</a></li>
       <li><a routerLink="my-orders" class="fs-5">My Orders</a></li>
       <li><a [routerLink]="cartItems>0?'/my-cart':null" class="fs-5">Cart({{cartItems}})</a></li>
+      <li><a title="My Wishlist"><i class="fa-solid fa-heart"></i></a></li>
     </ul>
     <ul *ngSwitchCase="'seller'" class="nav-menu">
       <li><a routerLink="seller-home" class="fs-5">Product List</a></li>
