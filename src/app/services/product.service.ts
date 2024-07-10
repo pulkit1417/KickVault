@@ -2,13 +2,14 @@ import { EventEmitter, Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
 import { cart, order, product, saleItem } from '../data-types';
+import { LocalStorageService } from './local-storage-service.service';
 @Injectable({
   providedIn: 'root',
 })
 export class ProductService {
   cartData = new EventEmitter<product[] | []>();
 
-  constructor(private http: HttpClient, private router: Router) {}
+  constructor(private http: HttpClient, private router: Router,  private localStorageService: LocalStorageService ) {}
   addProduct(data: product) {
     return this.http.post('https://database-yme9.onrender.com/products', data);
   }
@@ -49,23 +50,24 @@ export class ProductService {
   }
   localAddToCart(data: product) {
     let cartData = [];
-    let LocalCart = localStorage.getItem('LocalCart');
+    let LocalCart = this.localStorageService.getItem('LocalCart');
     if (!LocalCart) {
-      localStorage.setItem('LocalCart', JSON.stringify([data]));
+      this.localStorageService.setItem('LocalCart', JSON.stringify([data]));
       this.cartData.emit([data]);
     } else {
       cartData = JSON.parse(LocalCart);
       cartData.push(data);
-      localStorage.setItem('LocalCart', JSON.stringify(cartData));
+      this.localStorageService.setItem('LocalCart', JSON.stringify(cartData));
     }
     this.cartData.emit(cartData);
   }
-  removeItemFromCart(productId:string){
-    let cartData = localStorage.getItem('LocalCart');
-    if(cartData){
-      let items : product[] = JSON.parse(cartData);
-      items = items.filter((item:product)=>productId!==item.id);
-      localStorage.setItem('LocalCart', JSON.stringify(items));
+
+  removeItemFromCart(productId: string) {
+    let cartData = this.localStorageService.getItem('LocalCart');
+    if (cartData) {
+      let items: product[] = JSON.parse(cartData);
+      items = items.filter((item: product) => productId !== item.id);
+      this.localStorageService.setItem('LocalCart', JSON.stringify(items));
       this.cartData.emit(items);
     }
   }
@@ -88,9 +90,8 @@ export class ProductService {
     return this.http.delete(`https://database-yme9.onrender.com/cart/${cartId}`);
   }
 
-  currentCart(){
-    
-    let userStore = localStorage.getItem('user');
+  currentCart() {
+    let userStore = this.localStorageService.getItem('user');
     let userData = userStore && JSON.parse(userStore);
     return this.http.get<cart[]>(`https://database-yme9.onrender.com/cart?userId=${userData.id}`);
   }
@@ -99,18 +100,18 @@ export class ProductService {
     return this.http.post('https://database-yme9.onrender.com/orders', data)
   }
 
-  orderList(){
-    let userStore = localStorage.getItem('user');
+  orderList() {
+    let userStore = this.localStorageService.getItem('user');
     let userData = userStore && JSON.parse(userStore);
-    return this.http.get<order[]>(`https://database-yme9.onrender.com/orders?userId=${userData.id}`)
+    return this.http.get<order[]>(`https://database-yme9.onrender.com/orders?userId=${userData.id}`);
   }
 
-  deleteCartItems(cartId:string){
-    return this.http.delete(`https://database-yme9.onrender.com/cart/${cartId}`,{observe:'response'}).subscribe((result: any)=>{
-      if(result){
-        this.cartData.emit([])
+  deleteCartItems(cartId: string) {
+    return this.http.delete(`https://database-yme9.onrender.com/cart/${cartId}`, { observe: 'response' }).subscribe((result: any) => {
+      if (result) {
+        this.cartData.emit([]);
       }
-    })
+    });
   }
 
   cancelOrder(orderId:string){

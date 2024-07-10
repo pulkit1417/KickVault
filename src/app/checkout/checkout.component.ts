@@ -2,7 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { ProductService } from '../services/product.service';
 import { cart, order } from '../data-types';
-import { Route, Router } from '@angular/router';
+import { Router } from '@angular/router';
+import { LocalStorageService } from '../services/local-storage-service.service';
 
 @Component({
   selector: 'app-checkout',
@@ -15,7 +16,13 @@ export class CheckoutComponent implements OnInit {
   totalPrice: number | undefined;
   cartData: cart[] | undefined;
   orderMsg: string | undefined;
-  constructor(private product: ProductService, private router: Router) {}
+
+  constructor(
+    private product: ProductService, 
+    private router: Router,
+    private localStorageService: LocalStorageService // Inject the new service
+  ) {}
+
   ngOnInit(): void {
     this.product.currentCart().subscribe((result) => {
       let price = 0;
@@ -32,10 +39,10 @@ export class CheckoutComponent implements OnInit {
   }
 
   orderNow(data: { email: string; address: string; phone: string }) {
-    let user = localStorage.getItem('user');
-    let userId = user && JSON.parse(user).id;
+    const userString = this.localStorageService.getItem('user');
+    const userId = userString ? JSON.parse(userString).id : null;
 
-    if (this.totalPrice) {
+    if (this.totalPrice && userId) {
       let orderData: order = {
         ...data,
         totalPrice: this.totalPrice,
@@ -54,7 +61,7 @@ export class CheckoutComponent implements OnInit {
           this.orderMsg = 'Your Order has been Placed';
           setTimeout(() => {
             this.router.navigate(['/my-orders']);
-            this.orderMsg=undefined;
+            this.orderMsg = undefined;
           }, 4000);
         }
       });
