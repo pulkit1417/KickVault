@@ -27,6 +27,8 @@ export class HomeComponent implements OnInit {
 
   toggleWishlist(item: any) {
     item.isWished = !item.isWished;
+    item['animateHeart'] = true; // Use bracket notation here
+    setTimeout(() => item['animateHeart'] = false, 300);
   }
 
   prevSlide() {

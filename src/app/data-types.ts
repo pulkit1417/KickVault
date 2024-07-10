@@ -21,6 +21,7 @@ export interface product {
   reviewCount:string,
   rating:number,
   isWished:boolean,
+  animateHeart: false,
 }
 
 export interface cart{
@@ -59,4 +60,6 @@ export interface saleItem{
   originalPrice:string,
   salePrice:string,
   discountPercentage:string,
+  isWished: any;
+  animateHeart: false,
 }
