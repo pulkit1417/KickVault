@@ -20,21 +20,26 @@ export class CheckoutComponent implements OnInit {
   constructor(
     private product: ProductService, 
     private router: Router,
-    private localStorageService: LocalStorageService // Inject the new service
+    private localStorageService: LocalStorageService
   ) {}
 
   ngOnInit(): void {
-    this.product.currentCart().subscribe((result) => {
-      let price = 0;
-      this.cartData = result;
-      result.forEach((item) => {
-        if (item.quantity) {
-          price = price + +item.price * +item.quantity;
-        }
-      });
-      this.totalPrice = parseFloat(
-        (price + price / 16 + 50 - price / 15).toFixed(2)
-      );
+    this.product.currentCart().subscribe({
+      next: (result) => {
+        let price = 0;
+        this.cartData = result;
+        result.forEach((item) => {
+          if (item.quantity) {
+            price = price + +item.price * +item.quantity;
+          }
+        });
+        this.totalPrice = parseFloat(
+          (price + price / 16 + 50 - price / 15).toFixed(2)
+        );
+      },
+      error: (err) => {
+        console.error('Error fetching cart data:', err);
+      }
     });
   }
 

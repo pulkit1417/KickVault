@@ -26,31 +26,41 @@ export class MyCartComponent implements OnInit {
     this.loadDetails();
   }
 
-  removeFromCart(cartId:string|undefined){
+  removeFromCart(cartId: string | undefined) {
     cartId && this.cartData && this.product.removeToCart(cartId)
-    .subscribe((result)=>{
-      this.loadDetails();
-    })
-  }
-
-  loadDetails(){
-    this.product.currentCart().subscribe((result) => {
-      this.cartData = result;
-      let price = 0;
-      result.forEach((item) => {
-        if (item.quantity) {
-          price = price + +item.price * +item.quantity;
+      .subscribe({
+        next: () => {
+          this.loadDetails();
+        },
+        error: (err) => {
+          console.error('Error removing item from cart:', err);
         }
       });
-      this.priceSummary.price = price;
-      this.priceSummary.discount = parseFloat((price / 15).toFixed(1));
-      this.priceSummary.tax = parseFloat((price / 16).toFixed(1));
-      this.priceSummary.shipping = 50;
-      this.priceSummary.total = parseFloat(
-        (price + this.priceSummary.tax + 50 - this.priceSummary.discount).toFixed(2)
-      );
-      if(!this.cartData.length){
-        this.router.navigate(['']);
+  }
+
+  loadDetails() {
+    this.product.currentCart().subscribe({
+      next: (result) => {
+        this.cartData = result;
+        let price = 0;
+        result.forEach((item) => {
+          if (item.quantity) {
+            price = price + +item.price * +item.quantity;
+          }
+        });
+        this.priceSummary.price = price;
+        this.priceSummary.discount = parseFloat((price / 15).toFixed(1));
+        this.priceSummary.tax = parseFloat((price / 16).toFixed(1));
+        this.priceSummary.shipping = 50;
+        this.priceSummary.total = parseFloat(
+          (price + this.priceSummary.tax + 50 - this.priceSummary.discount).toFixed(2)
+        );
+        if (!this.cartData.length) {
+          this.router.navigate(['']);
+        }
+      },
+      error: (err) => {
+        console.error('Error fetching cart details:', err);
       }
     });
   }
