@@ -1,8 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Inject, PLATFORM_ID } from '@angular/core';
 import { RouterLink, Router } from '@angular/router';
-import { CommonModule } from '@angular/common';
+import { CommonModule, isPlatformBrowser } from '@angular/common';
 import { ProductService } from '../services/product.service';
 import { product } from '../data-types';
+import { LocalStorageService } from '../services/local-storage-service.service';
 @Component({
   selector: 'app-header',
   standalone: true,
@@ -18,19 +19,23 @@ export class HeaderComponent implements OnInit {
   searchResult: undefined | product[];
   searchText: undefined | product[];
   cartItems = 0;
-  constructor(private route: Router, private product: ProductService) {}
+  constructor(
+    private route: Router, 
+    private product: ProductService,
+    private localStorage: LocalStorageService,
+    @Inject(PLATFORM_ID) private platformId: Object
+  ) {}
 
   ngOnInit(): void {
     this.route.events.subscribe((val: any) => {
       if (val.url) {
-        if (localStorage.getItem('seller') && val.url.includes('seller')) {
-          let sellerStore = localStorage.getItem('seller');
-          let sellerData = sellerStore && JSON.parse(sellerStore)[0];
+        const sellerData = this.getSellerData();
+        const userData = this.getUserData();
+
+        if (sellerData && val.url.includes('seller')) {
           this.sellerName = sellerData.username;
           this.menuType = 'seller';
-        } else if (localStorage.getItem('user')) {
-          let userStore = localStorage.getItem('user');
-          let userData = userStore && JSON.parse(userStore);
+        } else if (userData) {
           this.userName = userData.username;
           this.menuType = 'user';
           this.product.getCartList(userData.id);
@@ -40,7 +45,7 @@ export class HeaderComponent implements OnInit {
       }
     });
 
-    let cartData = localStorage.getItem('LocalCart');
+    const cartData = this.localStorage.getItem('LocalCart');
     if (cartData) {
       this.cartItems = JSON.parse(cartData).length;
     }
@@ -49,15 +54,29 @@ export class HeaderComponent implements OnInit {
       this.cartItems = items.length;
     });
   }
+
+  private getSellerData() {
+    const sellerStore = this.localStorage.getItem('seller');
+    return sellerStore ? JSON.parse(sellerStore)[0] : null;
+  }
+
+  private getUserData() {
+    const userStore = this.localStorage.getItem('user');
+    return userStore ? JSON.parse(userStore) : null;
+  }
+
   sellerLogout() {
-    localStorage.removeItem('seller');
+    this.localStorage.removeItem('seller');
     this.route.navigate(['/']);
   }
+
   userLogout() {
-    localStorage.removeItem('user');
+    this.localStorage.removeItem('user');
     this.route.navigate(['user-auth']);
     this.product.cartData.emit([]);
   }
+
+
   searchProducts(query: KeyboardEvent) {
     if (query) {
       const element = query.target as HTMLInputElement;
