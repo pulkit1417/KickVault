@@ -12,7 +12,7 @@ import { Router } from '@angular/router';
   styleUrl: './my-orders.component.css',
 })
 export class MyOrdersComponent implements OnInit {
-  orderData: order[] | undefined;
+  orderData: order[] = [];
   cancelOrderMsg: string | undefined;
   constructor(private product: ProductService, private router:Router) {}
   ngOnInit(): void {

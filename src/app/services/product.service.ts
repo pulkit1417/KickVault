@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
 import { cart, order, product, saleItem } from '../data-types';
 import { LocalStorageService } from './local-storage-service.service';
+import { of } from 'rxjs';
 @Injectable({
   providedIn: 'root',
 })
@@ -101,9 +102,14 @@ export class ProductService {
   }
 
   orderList() {
-    let userStore = this.localStorageService.getItem('user');
-    let userData = userStore && JSON.parse(userStore);
-    return this.http.get<order[]>(`https://database-yme9.onrender.com/orders?userId=${userData.id}`);
+    const userStore = this.localStorageService.getItem('user');
+    const userData = userStore ? JSON.parse(userStore) : null;
+    if (userData && userData.id) {
+      return this.http.get<order[]>(`https://database-yme9.onrender.com/orders?userId=${userData.id}`);
+    } else {
+      // Return an observable with an empty array if there's no user
+      return of([]);
+    }
   }
 
   deleteCartItems(cartId: string) {
