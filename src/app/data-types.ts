@@ -20,7 +20,6 @@ export interface product {
   productId: string | undefined;
   reviewCount:string,
   rating:number,
-  isWished:boolean,
   animateHeart: false,
 }
 
@@ -60,6 +59,5 @@ export interface saleItem{
   originalPrice:string,
   salePrice:string,
   discountPercentage:string,
-  isWished: any;
   animateHeart: false,
 }

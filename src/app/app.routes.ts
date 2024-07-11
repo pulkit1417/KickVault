@@ -10,6 +10,7 @@ import { ProductDetailsComponent } from './product-details/product-details.compo
 import { UserAuthComponent } from './user-auth/user-auth.component';
 import { CheckoutComponent } from './checkout/checkout.component';
 import { MyOrdersComponent } from './my-orders/my-orders.component';
+import { NotFoundComponent } from './not-found/not-found.component';
 
 export const routes: Routes = [
   {path: '',component: HomeComponent},
@@ -22,4 +23,5 @@ export const routes: Routes = [
   {path:'details/:productId',component:ProductDetailsComponent},
   {path:'checkout',component:CheckoutComponent},
   {path:'my-orders',component:MyOrdersComponent},
+  {path:"**",component:NotFoundComponent} 
 ];
